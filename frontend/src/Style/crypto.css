@@ -1,0 +1,70 @@
+.crypto-container {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid black;
+    align-items: center;
+}
+
+.crypto-container Button {
+    margin-left: 0.5vw;
+}
+
+.crypto-in-USD-section {
+    margin-left: 6vw;
+    width: 6vw;
+    border: 1px solid red;
+}
+
+.crypto-in-USD-div {
+    width: 8vw;
+    margin-left: 3vw; 
+    display: flex;
+    justify-content: flex-end;  
+}
+
+.crypto-buttons-div {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.crypto-name {
+    width: 6vw;
+}
+
+.confirm-sell-or-purchase-div {
+    margin: auto;
+    margin-top: 20vh;
+    width: 20vw;
+    height: 50vh;
+    background-color: white;
+    color: black;
+}
+
+.confirm-sell-or-purchase-div .textfield {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.sell-or-purchase-buttons {
+    display: flex;
+    height: 29.5vh;
+    justify-content: space-between;
+    margin: 0 5px 0 5px;
+}
+
+.sell-or-purchase-buttons Button {
+    align-self: flex-end;
+}
+
+.buy-or-sell-btn {
+    flex-direction: end;
+}
+
+.confirm-sell-or-purchase-div p {
+    font-size: 2rem;
+    font-weight: 200;
+    padding: 15px;
+    font-family: sans-serif;
+}

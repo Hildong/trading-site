@@ -1,0 +1,7 @@
+.home-div {
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+}
