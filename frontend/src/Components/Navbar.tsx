@@ -18,7 +18,7 @@ const userDefaultData: IdefaultUserValues = {
         btc: 0,
         eth: 0,
     },
-    trades: null
+    trades: []
 }
 
 const Navbar: React.FC = () => {
@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
                     >
                         Reset
                     </Button>
-                    <Link className='nav-link' to="/">Buy&Sell</Link>
+                    <Link className='nav-link' to="/">Buy</Link>
                     <Link className='nav-link' to="/portfolio">Portfolio</Link>
                     <Link className='nav-link' to="/about">About</Link>
                     <Avatar color="inherit">PH</Avatar>

@@ -1,0 +1,14 @@
+.portfolio-div {
+    display: flex;
+    justify-content: center;
+}
+
+.portfolio-left-side-div {
+    width: 45vw;
+    height: 80vh;
+}
+
+.portfolio-right-side-div {
+    width: 45vw;
+    height: 80vh;
+}
