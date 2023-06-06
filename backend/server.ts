@@ -25,7 +25,7 @@ app.use(bodyParser.json())
 
 connectToDatabase();
 
-app.get('/API/getUser', (req, res) => getAPI.getUserInfo(req, res));
+app.get('/API/getUser', getAPI.getUserInfo);
 app.get('/API/getTradeHistory', getAPI.getTrades);
 app.post('/API/updateUser', postAPI.updateUserInfo);
 app.post('/API/buyCrypto', postAPI.buyCrypto);

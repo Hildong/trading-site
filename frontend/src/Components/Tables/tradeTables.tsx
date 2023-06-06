@@ -6,7 +6,8 @@ interface Props {
 }
 
 export const TradeTable = (props: Props) => {
-    const data = useMemo(() => props.data, [])
+    console.log(props.data)
+    const data = useMemo(() => props.data, [props.data])
     const columns = useMemo(() => [
         {
             Header: "Action",

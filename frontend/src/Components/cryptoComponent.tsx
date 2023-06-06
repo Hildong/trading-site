@@ -8,18 +8,31 @@ import '../Style/crypto.css'
 
 type Props = {
     showSellButton: Boolean,
-    coin: String
+    coin: String,
+    trades?: Array<Object>,
+    invalidateQuery?: () => void;
 }
 
 export const CryptoComponent: React.FC<Props> = (props: Props) => {
+    const queryClient = useQueryClient();
 
     const [crypto, setCrypto] = useState<String>("")
     const [action, setAction] = useState<String>();
     const [amount, setAmount] = useState<Number>();
     const [open, setOpen] = useState<boolean>(false);
 
-    const buyCryptoCoin = useMutation(buyCrypto); 
-    const sellCryptoCoin = useMutation(sellCrypto);  
+    const buyCryptoCoin = useMutation({
+        mutationFn: buyCrypto,
+        onSuccess: () => {
+            if(props.invalidateQuery) props.invalidateQuery()
+        }
+    }); 
+    const sellCryptoCoin = useMutation({
+        mutationFn: sellCrypto,
+        onSuccess: () => {
+            if(props.invalidateQuery) props.invalidateQuery() 
+        }
+    });  
 
     useEffect(() => {
         const pricesWs = new WebSocket(`wss://ws.coincap.io/prices?assets=${props.coin}`)
@@ -32,6 +45,7 @@ export const CryptoComponent: React.FC<Props> = (props: Props) => {
         return () => {
             pricesWs.close();
         }
+        
     })
 
     const handleClose = () => {

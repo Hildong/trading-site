@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
             console.error(resetUserData.error)
         }
     }
-    
+    console.log(data)
     return(
         <div className="navbar">
             <Box sx={{ flexGrow: 1 }}>
@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
                     {isLoading ? (
                             <p>Loading...</p>
                         ) : (
-                            data && !isError ? Object.entries(data).map(([key, value]: [any, any]) => <p key={key}>{value}</p>) : <p>NaN</p>
+                            data && !isError ? <p>${Math.floor(data)}</p> : <p>NaN</p>
                         )
                     }
                     </Toolbar>
